@@ -1,0 +1,260 @@
+/* General Reset */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 0; /* Remove auto padding */
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px; /* Adjust padding for uniform top and bottom spacing */
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: red;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px; /* Add margin to space below the paragraph */
+}
+
+/* Navbar Styles */
+.navbar {
+    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Center navbar */
+    gap: 15px; /* Add spacing between navbar items */
+    padding: 10px 0;
+}
+
+.navbar li {
+    margin: 10px; /* Remove additional margin */
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: #555;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar li a:hover {
+    background-color: #777;
+}
+
+/* Categories Section */
+.categories {
+    padding: 50px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.categories h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* Popular Books Section */
+.popular-books {
+    padding: 10px;
+    text-align: center;
+}
+
+.popular-books h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* Book Grid */
+.book-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 20px 10px; /* Add padding for spacing */
+}
+
+/* Book Items */
+.book-item {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    flex-basis: calc(33.33% - 20px); /* 3 items per row on desktop */
+    margin-bottom: 20px; /* Add margin to space between rows */
+}
+
+.book-item:hover {
+    transform: scale(1.05);
+}
+
+.book-item img {
+    max-width: 60%; /* Increase image size for better display */
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.book-item h3 {
+    font-size: 1.5rem;
+    color: #d32f2f;
+    margin-bottom: 10px;
+}
+
+.book-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    /* Stack book grid items into one column */
+    .book-grid {
+        flex-direction: column;
+    }
+
+    .book-item {
+        flex-basis: 100%; /* Full width for each item */
+        margin-bottom: 20px;
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+    }
+
+    .navbar li {
+        margin-bottom: 10px;
+    }
+
+    .navbar li:last-child {
+        margin-bottom: 0;
+    }
+
+    header h1 {
+        font-size: 2.3rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    .book-item img {
+        width: 70%; /* Slightly larger images for mobile view */
+    }
+}
+
+/* Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: relative;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-top: 10px;
+}
+
+.navbar {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hamburger Menu for Mobile */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.bar {
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Navigation */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #333;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .navbar a {
+        font-size: 1.2rem;
+    }
+}

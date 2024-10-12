@@ -1,0 +1,112 @@
+<!-- catalog.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Webpage Program - Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Use the same header/navbar as other pages -->
+    <header>
+        <h1>Welcome to the Library Webpage Program</h1>
+        <p>Your one-stop solution for finding fiction and non-fiction books across various genres.</p>
+        <!-- Navigation Bar -->
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About the App</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="Search-box.html">Search</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="filter">
+        <label for="genre">Filter by Genre:</label>
+        <select id="genre" onchange="filterBooks()">
+            <option value="all">All</option>
+            <option value="fiction">Fiction</option>
+            <option value="nonfiction">NonFiction</option>
+        </select>
+    </div>
+    
+    <div class="book-catalog">
+        <!-- Fiction Books -->
+        <div class="book-item fiction">
+            <img src="TheAwakening.jpg" alt="The Awakening">
+            <a href="https://www.goodreads.com/book/show/58345.The_Awakening"><h3>The Awakening</h3>
+        </div>
+
+        <div class="book-item fiction">
+            <img src="To Kill a MockingBird.jpg" alt="To Kill a Mockingbird">
+            <a href="https://www.goodreads.com/book/show/2657.To_Kill_a_Mockingbird"><h3>To Kill a Mockingbird</h3>
+        </div>
+
+        <div class="book-item fiction">
+            <img src="Fahrenheit.jpg" alt="Fahrenheit 451">
+            <a href="https://www.goodreads.com/book/show/13079982-fahrenheit-451"><h3>Fahrenheit 451</h3></a>
+        </div>
+
+        <div class="book-item fiction">
+            <img src="Neil Gaiman Trigger Warning.jpg" alt="Neil Gaiman Trigger Warning">
+            <a href="https://www.goodreads.com/book/show/22522808-trigger-warning?from_search=true&from_srp=true&qid=5n08ap1NP2&rank=1"><h3>Neil Gaiman Trigger Warning</h3></a>
+        </div>
+
+        <div class="book-item fiction">
+            <img src="Neil GaiMan Smoke & Mirrors.jpg" alt="Neil Gaiman Smoke & Mirrors">
+            <a href="https://www.goodreads.com/book/show/16790.Smoke_and_Mirrors?from_search=true&from_srp=true&qid=5n08ap1NP2&rank=2"><h3>Neil Gaiman Smoke & Mirrors</h3></a>
+        </div>
+    
+        <!-- NonFiction Books -->
+        <div class="book-item nonfiction">
+            <img src="StrangeChemistry.jpg" alt="Strange Chemistry">
+            <a href="https://www.goodreads.com/book/show/32337991-strange-chemistry"><h3>Strange Chemistry</h3></a>
+        </div>
+
+        <div class="book-item nonfiction">
+            <img src="Gory Details.jpg" alt="Gory Details">
+            <a href="https://www.goodreads.com/book/show/50188782-gory-details"><h3>Gory Details: Adventures from the Dark Side of Science</h3></a>
+        </div>
+
+        <div class="book-item nonfiction">
+            <img src="Periodic Tables.jpg" alt="Periodic Tables">
+            <a href="https://www.goodreads.com/book/show/10294187-periodic-tales"><h3>Periodic Tables</h3></a>
+        </div>
+
+        <div class="book-item nonfiction">
+            <img src="The View from the Cheap Seats.jpg" alt="Periodic Tables">
+            <a href="https://www.goodreads.com/book/show/24331386-the-view-from-the-cheap-seats?from_search=true&from_srp=true&qid=dZ7Hi1a53v&rank=2"><h3>Neil Gaiman: The View form the Cheap Seats</h3></a>
+        </div>
+
+        <div class="book-item nonfiction">
+            <img src="How to Take Smart Notes.jpg" alt="Periodic Tables">
+            <a href="https://www.goodreads.com/book/show/34507927-how-to-take-smart-notes?from_search=true&from_srp=true&qid=dZ7Hi1a53v&rank=3"><h3>How to Take Smart Notes</h3></a>
+        </div>
+    </div>
+    
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hardik Marlapudi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function filterBooks() {
+            var genre = document.getElementById('genre').value;
+            var books = document.getElementsByClassName('book-item');
+        
+            for (var i = 0; i < books.length; i++) {
+                if (genre === 'all') {
+                    books[i].classList.remove('hidden');
+                } else if (books[i].classList.contains(genre)) {
+                    books[i].classList.remove('hidden');
+                } else {
+                    books[i].classList.add('hidden');
+                }
+            }
+        }
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: red;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 20px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #666;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* New Novels Section */
+.new-novels {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.new-novels h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.novel-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.novel-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.novel-item img {
+    max-width: 45%;
+    border-radius: 5px;
+}
+
+.novel-item h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #333;
+}
+
+.novel-item p {
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #c0392b;
+}
+
+/* Style for the "More..." button */
+.more-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#moreButton {
+    background-color: #444; /* Soft blue color */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#moreButton:hover {
+    background-color: #444;
+}
+
+/* Style for the "More..." button */
+.more-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#moreButton {
+    background-color: #333; /* Soft blue color */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#moreButton:hover {
+    background-color: #444;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .novel-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .novel-item {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stacks the navigation links vertically */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Adds margin between stacked navigation links */
+    }
+
+    .featured-book {
+        max-width: 100%; /* Makes the book section take full width on smaller screens */
+        padding: 15px;    /* Adjusts padding for better spacing on small screens */
+    }
+
+    header h1 {
+        font-size: 1.8rem; /* Adjust header font size for smaller screens */
+    }
+
+    .book-section h2 {
+        font-size: 1.5rem; /* Adjust section title font size */
+    }
+
+    .featured-book h3 {
+        font-size: 1.2rem; /* Adjust book title size */
+    }
+
+    footer {
+        padding: 20px 10px; /* Adjust footer padding */
+    }
+}

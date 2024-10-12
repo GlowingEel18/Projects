@@ -1,0 +1,64 @@
+{
+  "books": [
+    {
+      "title": "New Novels",
+      "image": "New Novels.jpg",
+      "link": "new-novels.html",
+      "description": "A fantastic new novel."
+    },
+    {
+      "title": "Mystery",
+      "image": "Mystery.jpg",
+      "link": "mystery.html",
+      "description": "A bestselling mystery."
+    },
+    {
+      "title": "Fantasy",
+      "image": "Fantasy.jpg",
+      "link": "fantasy.html",
+      "description": "An exciting fantasy."
+    },
+    {
+      "title": "Drama",
+      "image": "Drama.jpg",
+      "link": "drama.html",
+      "description": "A thrilling crime drama."
+    },
+    {
+      "title": "Fiction",
+      "image": "Fiction2.jpg",
+      "link": "fiction.html",
+      "description": "A gripping historical fiction."
+    },
+    {
+      "title": "Nonfiction",
+      "image": "NonFiction2.jpg",
+      "link": "NonFiction.html",
+      "description": "An inspiring non-fiction."
+    },
+    {
+      "title": "Romance",
+      "image": "Romance.jpg",
+      "link": "romance.html",
+      "description": "A heartwarming romance."
+    },
+    {
+      "title": "Scientific Mystery",
+      "image": "Scientific Mystery.jpg",
+      "link": "scientific-mystery.html",
+      "description": "A deep dive into a scientific mystery."
+    },
+    {
+      "title": "Sci-Fi",
+      "image": "Sci-Fi.jpg",
+      "link": "sci-fi.html",
+      "description": "An adventurous sci-fi journey."
+    },
+    {
+      "title": "Horror",
+      "image": "Horror.jpg",
+      "link": "horror.html",
+      "description": "A terrifying horror story."
+    }
+  ]
+}

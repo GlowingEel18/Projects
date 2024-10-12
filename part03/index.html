@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Library Webpage Program</h1>
+        <p>Your one-stop solution for finding fiction and non-fiction books across various genres.</p>
+    </header>
+
+    <main>
+        <!-- Navigation Bar -->
+        <header>
+            <nav>
+                <ul class="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About the App</a></li>
+                    <li><a href="catalog.html">Catalog</a></li>
+                    <li><a href="Search-box.html">Search</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Most Popular Books Section with 10 books -->
+        <section class="popular-books">
+            <h2>Most Popular Books</h2>
+            <div class="book-grid">
+                <!-- Book 1 -->
+                <div class="book-item" id="book1">
+                    <a href="#" onclick="changeBook">
+                        <img src="https://picsum.photos/200/300?book=1" alt="Popular Book 1">
+                        <h3>Fantasy Books</h3>
+                        <p>A fantastic new novel.</p>
+                    </a>
+                </div>
+                <!-- Book 2 -->
+                <div class="book-item" id="book2">
+                    <a href="#" onclick="changeBook(1)">
+                        <img src="https://picsum.photos/200/300?random=2" alt="Popular Book 2">
+                        <h3>Popular Book 2</h3>
+                        <p>A bestselling mystery.</p>
+                    </a>
+                </div>
+                <!-- Book 3 -->
+                <div class="book-item" id="book3">
+                    <a href="#" onclick="changeBook(2)">
+                        <img src="https://picsum.photos/200/300?random=3" alt="Popular Book 3">
+                        <h3>Popular Book 3</h3>
+                        <p>An exciting fantasy.</p>
+                    </a>
+                </div>
+                <!-- Book 4 -->
+                <div class="book-item" id="book4">
+                    <a href="#" onclick="changeBook(3)">
+                        <img src="https://picsum.photos/200/300?random=4" alt="Popular Book 4">
+                        <h3>Popular Book 4</h3>
+                        <p>A thrilling crime drama.</p>
+                    </a>
+                </div>
+                <!-- Book 5 -->
+                <div class="book-item" id="book5">
+                    <a href="#" onclick="changeBook(4)">
+                        <img src="https://picsum.photos/200/300?random=5" alt="Popular Book 5">
+                        <h3>Popular Book 5</h3>
+                        <p>A gripping historical fiction.</p>
+                    </a>
+                </div>
+                <!-- Book 6 -->
+                <div class="book-item" id="book6">
+                    <a href="#" onclick="changeBook(5)">
+                        <img src="https://picsum.photos/200/300?random=6" alt="Popular Book 6">
+                        <h3>Popular Book 6</h3>
+                        <p>An inspiring non-fiction.</p>
+                    </a>
+                </div>
+                <!-- Book 7 -->
+                <div class="book-item" id="book7">
+                    <a href="#" onclick="changeBook(6)">
+                        <img src="https://picsum.photos/200/300?random=7" alt="Popular Book 7">
+                        <h3>Popular Book 7</h3>
+                        <p>A heartwarming romance.</p>
+                    </a>
+                </div>
+                <!-- Book 8 -->
+                <div class="book-item" id="book8">
+                    <a href="#" onclick="changeBook(7)">
+                        <img src="https://picsum.photos/200/300?random=8" alt="Popular Book 8">
+                        <h3>Popular Book 8</h3>
+                        <p>A deep dive into a scientific mystery.</p>
+                    </a>
+                </div>
+                <!-- Book 9 -->
+                <div class="book-item" id="book9">
+                    <a href="#" onclick="changeBook(8)">
+                        <img src="https://picsum.photos/200/300?random=9" alt="Popular Book 9">
+                        <h3>Popular Book 9</h3>
+                        <p>An adventurous sci-fi journey.</p>
+                    </a>
+                </div>
+                <!-- Book 10 -->
+                <div class="book-item" id="book10">
+                    <a href="#" onclick="changeBook(9)">
+                        <img src="https://picsum.photos/200/300?random=10" alt="Popular Book 10">
+                        <h3>Popular Book 10</h3>
+                        <p>A captivating fantasy epic.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hardik Marlapudi. All rights reserved.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
