@@ -33,10 +33,7 @@ const fetchBooks = async () => {
 // Function to display the books on the page
 const displayBooks = async () =>  {
     let books = await fetchBooks();
-    console.log('Inside displaybooks: '+books);
-    //const booksSection  = document.getElementById('books-section');
     const booksGrid  = document.getElementById('books-grid');
-    console.log ("books Grid: ", booksGrid);
     let i = 0
     books.forEach((book) => {
         i = i+1;
@@ -46,20 +43,13 @@ const displayBooks = async () =>  {
 }
 
 const getBookItem = (book, i) => {
-    console.log("Title: ",book.title);
-    console.log("Image: ",book.image);
-    console.log("Link: ",book.link);
-    console.log("Description: ",book.description);
-
     // Create a new div element
     var div = document.createElement("div");
     // Optionally, set attributes or styles for the div
     div.id = "book"+i; // Set an ID for the div
     div.className = "book-item"; // Set a class for the div
     // Append the div to an existing element in your HTML
-    //document.body.appendChild(div); 
     // Create a new image element
-    //<img src="images/fantasy.jpg" alt="Fantasy Book"></img>
     var img = document.createElement("img");
     // Set the source attribute for the image
     img.src = book.image;
@@ -68,10 +58,8 @@ const getBookItem = (book, i) => {
     img.width = 250; // Set the width to 250px
     img.height = 250; // Set the height to 250px
     // Append the image to an existing element in your HTML
-    //document.body.appendChild(img);
     div.appendChild(img);
     // Create a new anchor element
-    //<a href="fantasy.html" target="_blank"><h3>Fantasy</h3></a>
     var anchor = document.createElement("a");
     // Set the href attribute for the anchor
     anchor.href = book.link;
@@ -83,11 +71,9 @@ const getBookItem = (book, i) => {
     heading.textContent = book.title;
     // Append the h3 element to the anchor
     anchor.appendChild(heading);
-    //document.body.appendChild(link);
     div.appendChild(anchor);
 
     // Create a new paragraph element
-    //<p>An exciting fantasy.</p>
     var para = document.createElement("p");
     // Add text to the paragraph
     para.textContent = book.description;
