@@ -11,18 +11,15 @@ mobileMenu.addEventListener('click', () => {
 const fetchBooks = async () => {
     try {
         // Fetching the JSON data asynchronously
-        const response = await fetch('https://glowingeel18.github.io/csce242/assignments/Projects/part06/data/popularBooks.json');
+        const response = await fetch('../part06/data/popularBooks.json');
         
         // Check if the fetch was successful
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        // Parsing the response as JSON
-        const books = await response.json();
-
-        // Calling the function to display books
-        displayBooks(books);
+        //Parsing the response as JSON
+        return await response.json();
     } catch (error) {
         console.error('Error fetching the books:', error);
         // Display an error message on the page
@@ -34,56 +31,72 @@ const fetchBooks = async () => {
 };
 
 // Function to display the books on the page
-const displayBooks = (books) => {
-    const container = document.getElementById('book-container');
-
-    // Ensure the container exists
-    if (!container) {
-        console.error('Error: #book-container not found');
-        return;
-    }
-
-    // Clear any existing content in the container
-    container.innerHTML = '';
-
-    books.forEach(book => {
-        // Create div for each book
-        const bookItem = document.createElement('div');
-        bookItem.classList.add('book-item');
-
-        // Create img element
-        const img = document.createElement('img');
-        img.src = `https://glowingeel18.github.io/csce242/assignments/Projects/part06/images/books/${book.image}`;
-        img.alt = book.title;
-        img.width = 250;
-        img.height = 250;
-
-        // Error handling for missing images (optional)
-        img.onerror = () => {
-            img.src = 'fallback-image.jpg'; // A default image to show in case the fetch fails
-        };
-
-        // Create link for book title
-        const link = document.createElement('a');
-        link.href = book.link;
-        link.target = '_blank';
-        const title = document.createElement('h3');
-        title.textContent = book.title;
-        link.appendChild(title);
-
-        // Create paragraph for book description
-        const description = document.createElement('p');
-        description.textContent = book.description;
-
-        // Append img, link, and description to the book item
-        bookItem.appendChild(img);
-        bookItem.appendChild(link);
-        bookItem.appendChild(description);
-
-        // Append book item to container
-        container.appendChild(bookItem);
+const displayBooks = async () =>  {
+    let books = await fetchBooks();
+    console.log('Inside displaybooks: '+books);
+    //const booksSection  = document.getElementById('books-section');
+    const booksGrid  = document.getElementById('books-grid');
+    console.log ("books Grid: ", booksGrid);
+    let i = 0
+    books.forEach((book) => {
+        i = i+1;
+        console.log("book: ", book);
+        booksGrid.append(getBookItem(book, i));
     });
-};
+}
+
+const getBookItem = (book, i) => {
+    console.log("Title: ",book.title);
+    console.log("Image: ",book.image);
+    console.log("Link: ",book.link);
+    console.log("Description: ",book.description);
+
+    // Create a new div element
+    var div = document.createElement("div");
+    // Optionally, set attributes or styles for the div
+    div.id = "book"+i; // Set an ID for the div
+    div.className = "book-item"; // Set a class for the div
+    // Append the div to an existing element in your HTML
+    //document.body.appendChild(div); 
+    // Create a new image element
+    //<img src="images/fantasy.jpg" alt="Fantasy Book"></img>
+    var img = document.createElement("img");
+    // Set the source attribute for the image
+    img.src = book.image;
+    // Optionally, set other attributes like alt text or width and height
+    img.alt = book.title;
+    img.width = 250; // Set the width to 250px
+    img.height = 250; // Set the height to 250px
+    // Append the image to an existing element in your HTML
+    //document.body.appendChild(img);
+    div.appendChild(img);
+    // Create a new anchor element
+    //<a href="fantasy.html" target="_blank"><h3>Fantasy</h3></a>
+    var anchor = document.createElement("a");
+    // Set the href attribute for the anchor
+    anchor.href = book.link;
+    // Optionally, set other attributes like target
+    anchor.target = "_blank"; // Opens the link in a new tab
+    // Append the anchor to an existing element in your HTML
+    // Create a new h3 element
+    var heading = document.createElement("h3");
+    heading.textContent = book.title;
+    // Append the h3 element to the anchor
+    anchor.appendChild(heading);
+    //document.body.appendChild(link);
+    div.appendChild(anchor);
+
+    // Create a new paragraph element
+    //<p>An exciting fantasy.</p>
+    var para = document.createElement("p");
+    // Add text to the paragraph
+    para.textContent = book.description;
+    // Append the paragraph to an existing element in your HTML
+    //document.body.appendChild(para);
+    div.appendChild(para);
+    return div
+}
 
 // Call the function to fetch and display books when the page loads
-window.onload = () => fetchBooks();
+window.onload = () => displayBooks();
+
